@@ -11,6 +11,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+
 @Entity
 public class Citizen {
   @Id
@@ -21,5 +22,7 @@ public class Citizen {
   String lastName;
   String email;
   String phone;
+
+
 
 }
