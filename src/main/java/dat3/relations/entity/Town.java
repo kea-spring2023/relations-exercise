@@ -13,10 +13,13 @@ import lombok.*;
 public class Town {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "id", nullable = false)
   private Integer id;
 
+
+  @Column(unique = true)
   String name;
   String mayor;
   int schools;
+
+
 }

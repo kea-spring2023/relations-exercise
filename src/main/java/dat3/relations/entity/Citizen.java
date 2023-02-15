@@ -1,9 +1,6 @@
 package dat3.relations.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Getter
@@ -16,13 +13,18 @@ import lombok.*;
 public class Citizen {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  int id;
+  Integer id;
 
   String firstName;
   String lastName;
   String email;
   String phone;
 
+  @ManyToOne
+  Address address;
+
+  @ManyToOne//(cascade = CascadeType.ALL)
+  Town town;
 
 
 }
